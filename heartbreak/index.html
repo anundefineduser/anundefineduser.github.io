@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>heartbreak</title>
+        <style>
+            body {
+                background-color: #C2CECE;
+                color: #5D6768;
+                text-align: center;
+                margin: none;
+                padding: none;
+                border: none;
+            }
+
+            .heartbreak {
+                display: block;
+                margin: none;
+                padding: none;
+                margin-left: auto;
+                margin-right: auto;
+                width: 25%;
+                transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .heartbreak:hover {
+                transform: scale(1.02);
+                transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .heartbreak:active {
+                transform: scale(.95);
+                transition: transform 0.1s cubic-bezier(0.34, 1.56, 0.64, 1);
+            }
+            
+            .table {
+                padding-top: 1%;
+            }
+            .track {
+                font-style: italic;
+                font-weight: bold;
+                font-size: 16pt;
+                padding: none;
+                line-height: .1;
+                color: #5D6768;
+            }
+            a .track {
+                text-decoration: underline;
+                text-decoration-color: #5D6768;
+            }
+            a .track:hover {
+                color: #D83636;
+                text-decoration-color: #D83636;
+            }
+        </style>
+    </head>
+    <body>
+        <img class="heartbreak" src="./heartbreak front.png" draggable="false">
+        <div  class="table">
+            <tr>
+                <th><p class="track">say you will (intro)</p></th>
+                <th><p class="track">welcome to heartbreak</p></th>
+                <th><p class="track">heartless</p></th>
+                <th><p class="track">love lockdown</p></th>
+                <th><p class="track">amazing</p></th>
+                <th><p class="track">street lights</p></th>
+                <th><p class="track">paranoid</p></th>
+                <th><p class="track">robocop</p></th>
+                <th><p class="track">hallucinations</p></th>
+                <th><p class="track">bad news</p></th>
+                <th><p class="track">coldest winter</p></th>
+                <th><p class="track">real boy (outro)</p></th>
+                <th><a onclick="goToFile('./snippets/pressure-snippet.mp3')" href="javascript:void(0);"><p class="track">pressure (bonus)</p></a></th>
+            </tr>
+        </div>
+
+        <script>
+            let accepted = localStorage.getItem("accepted") || "false";
+            function goToFile(file) {
+                if (accepted != "true") {
+                    let confirmed = confirm("everything here currently (and in the future up till release) are a work in progress. this project is a work of art which'll change over time. do you accept this?");
+                    if (confirmed)
+                    {
+                        localStorage.setItem("accepted", "true");
+                        accepted = "true";
+                        window.open(file, "_blank");
+                        return true;
+                    }
+                    else
+                    {
+                        if (accepted != "false") {
+                            localStorage.setItem("accepted", "false");
+                            accepted = "false";
+                        }
+                        return false;
+                    }
+                }
+                else
+                    window.open(file, "_blank");
+            }
+        </script>
+    </body>
+</html>
