@@ -104,7 +104,7 @@
 
             const video = document.querySelector("#nostalgia");
             video.addEventListener('ended', (e) => {
-                window.close();
+                window.close('','_parent','');
             });
             const vidListener = keyListener('nostalgia', () => {
                 document.removeEventListener('keydown', listener);
