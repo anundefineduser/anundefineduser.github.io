@@ -14,7 +14,18 @@
                 inset: 0;
                 margin: auto;
             }
+
+            video {
+                height: 100%;
+                width: 100%;
+                text-align: center;
+                position: absolute;
+                inset: 0;
+                margin: auto;
+            }
         </style>
+        
+        <link rel="icon" type="image/x-icon" href="./images/favicon.png">
         <meta charset="UTF-8">
         <meta property="og:title" content="mont">    
         <meta name="twitter:title" content="mont">
@@ -27,6 +38,7 @@
     </head>
     <body>
         <img id="mont" src="" style="">
+        <video id="nostalgia" src="./nostalgia.mp4" type="video/mp4" hidden>
         <script>
             const mont = document.querySelector("#mont");
             const img = ["beast.png","chased.png","gayming.jpg","mont.png","aldren.png","floib.png","juego.png","mog.png","mog2.png","ron.png","whothefuck.png","whothefuck2.png","shaggy.jpg"];
@@ -82,12 +94,28 @@
             
             const audio = new Audio("./glacier.ogg");
             const listener = keyListener('mont', () => {
+                document.removeEventListener('keydown', listener);
+                document.removeEventListener('keydown', vidListener);
                 audio.loop = true;
                 audio.play();
                 document.body.setAttribute('style', 'background-image: url(\'https://media1.tenor.com/m/88dnH_mHRLAAAAAC/static-tv-static.gif\');');
                 requestAnimationFrame(update);
             });
+
+            const video = document.querySelector("#nostalgia");
+            video.addEventListener('ended', (e) => {
+                window.close();
+            });
+            const vidListener = keyListener('nostalgia', () => {
+                document.removeEventListener('keydown', listener);
+                document.removeEventListener('keydown', vidListener);
+                mont.setAttribute('hidden', '')
+                video.removeAttribute('hidden');
+                video.controls = false;
+                video.play();
+            });
             document.addEventListener('keydown', listener);
+            document.addEventListener('keydown', vidListener);
         </script>
     </body>
 </html>
