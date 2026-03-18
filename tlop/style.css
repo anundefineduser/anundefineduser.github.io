@@ -1,0 +1,72 @@
+body {
+    background-color: #f78c58;
+    color: #000000;
+    text-align: center;
+    font-size: .9rem;
+
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+p    { background-color: #f78c58; }
+a    { background-color: #f78c58; }
+span { background-color: #f78c58; }
+
+.disclaimer {
+    position: fixed;
+    text-align: left;
+    left: 0;
+    top: 0;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.albumart {
+    display: block;
+    position: sticky;
+
+    max-width: 25%;
+
+    padding-top: none;
+    margin: none;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+
+    -webkit-box-shadow:0px 0px 64px 0px rgba(0,0,0,0.32);
+    -moz-box-shadow: 0px 0px 64px 0px rgba(0,0,0,0.32);
+    box-shadow: 0px 0px 64px 0px rgba(0,0,0,0.32);
+}
+
+.tracklist {padding-top: 1%;}
+.tracklist span {
+    min-width: 35%;
+    display: inline-block;
+    text-align: left;
+}
+.tracklist span:first-child { text-align: right; }
+
+/* link shit */
+a:link {
+    color: #000000;
+    text-decoration: underline;
+    text-decoration-color: #000000;
+}
+a:visited {
+    color: #000000;
+    text-decoration: underline;
+    text-decoration-color: #000000;
+}
+a:hover {
+    color: #000000;
+    text-decoration: underline;
+    text-decoration-color: #000000;
+}
+a:active {
+    color: #000000;
+    text-decoration: underline;
+    text-decoration-color: #000000;
+}
