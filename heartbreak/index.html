@@ -31,6 +31,10 @@
                 margin-right: auto;
                 width: 25%;
                 transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+                
+                -webkit-box-shadow:0px 0px 64px 0px rgba(0,0,0,0.32);
+                -moz-box-shadow: 0px 0px 64px 0px rgba(0,0,0,0.32);
+                box-shadow: 0px 0px 64px 0px rgba(0,0,0,0.32);
             }
             .heartbreak:hover {
                 transform: scale(1.02);
@@ -63,11 +67,12 @@
         </style>
     </head>
     <body>
+        <br>
         <a href="./info.html"><img class="heartbreak" src="./images/heartbreak front.png" draggable="false"></a>
         <div class="table">
             <tr>
                 <th><p class="track">say you will (intro)</p></th>
-                <th><p class="track">welcome to heartbreak</p></th>
+                <th><a onclick="goToFile('./music/welcome to heartbreak - heartbreak.mp3')" href="javascript:void(0);"><p class="track">welcome to heartbreak</p></a></th>
                 <th><p class="track">heartless</p></th>
                 <th><p class="track">love lockdown</p></th>
                 <th><p class="track">amazing</p></th>

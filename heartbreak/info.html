@@ -42,22 +42,54 @@
                 padding: none;
                 margin-left: auto;
                 margin-right: auto;
-                width: 15%;
+                width: 30%;
+                transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+                -webkit-box-shadow:0px 0px 64px 0px rgba(0,0,0,0.32);
+                -moz-box-shadow: 0px 0px 64px 0px rgba(0,0,0,0.32);
+                box-shadow: 0px 0px 64px 0px rgba(0,0,0,0.32);
+            }
+            
+            img:hover {
+                transform: scale(1.02);
+                transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            img:active {
+                transform: scale(.95);
+                transition: transform 0.1s cubic-bezier(0.34, 1.56, 0.64, 1);
             }
         </style>
     </head>
     <body>
-        <h1 style="text-align: center; font-weight: bold;">heartbreak - current info page (3/12/26)</h1>
-        <ul>
-            <li>say you will is shortened and intented to be around one minute (as an intro track)</li>
-            <li>love lockdown is much more similar to paranoid in terms of sound</li>
-            <li style="line-height: 1;">hallucinations (see you in my nightmares) complete rework<br>(im intending it to be the sort of "sound climax" of the comp, imagine it kinda like ghost town compared to the rest of ye, 100% gonna get the hold my liquor outro treatment)</li>
-            <li>real boy (pinnochio story) complete rework (as much as the concert sound fits no one is listening to that)</li>
-        </ul>
-        <h1 style="text-align: center; font-weight: bold;">progress as of 3/12/26</h1>
-        <p>struggling on pressure, god working with unreleased ye be so annoying</p>
-        <p>i have ideas for all other songs, but nothing else has been worked on outside of pressure</p>
-        <p>probably like 10% done lowk</p>
-        <img src="https://gif.fxtwitter.com/tweet_video/G5D9NYFWgAAEGEi.gif">
+        <h1 style="text-align: center; font-weight: bold;">heartbreak - current info page (3/18/26)</h1>
+        <p>welcome to heartbreak has been finished</p>
+        <p>project probably like 10%-15% done atp</p>
+        <a onclick="goToFile('./music/welcome to heartbreak - heartbreak.mp3')" href="javascript:void(0);"><img src="./images/WELCOME TO HEARTBREAK.png"></a>
+        
+        <script>
+            let accepted = localStorage.getItem("accepted") || "false";
+            function goToFile(file) {
+                if (accepted != "true") {
+                    let confirmed = confirm("everything here currently (and in the future up till release) are a work in progress. this project is a work of art which'll change over time. do you accept this?");
+                    if (confirmed)
+                    {
+                        localStorage.setItem("accepted", "true");
+                        accepted = "true";
+                        window.open(file, "_blank");
+                        return true;
+                    }
+                    else
+                    {
+                        if (accepted != "false") {
+                            localStorage.setItem("accepted", "false");
+                            accepted = "false";
+                        }
+                        return false;
+                    }
+                }
+                else
+                    window.open(file, "_blank");
+            }
+        </script>
     </body>
 </html>
